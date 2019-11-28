@@ -1,19 +1,19 @@
 ## Convolutional Neural Network Week 1
 
 ### 目录
-- [Computer Vision](#cv)
-- [Edge Detection](#ed)
-- [Padding](#pd)
-- [Strided Convolutions](#sc)
-- [Convolutions Over Volume](#cov)
-- [One Layer of a Convolutional Network](#olcn)
-- [Simple Convolutional Network Example](#scne)
-- [Pooling Layers](#pl)
-- [CNN Example](#ce)
-- [Why Convolutions?](#wc)
+- [Computer Vision](#computer-vision)
+- [Edge Detection](#edge-detection)
+- [Padding](#padding)
+- [Strided Convolutions](#strided-convolutions)
+- [Convolutions Over Volume](#convolutions-over-volume)
+- [One Layer of a Convolutional Network](#one-layer-of-a-convolutional-network)
+- [Simple Convolutional Network Example](#simple-convolutional-network-example)
+- [Pooling Layers](#pooling-layers)
+- [CNN Example](#cnn-example)
+- [Why Convolutions?](#why-convolutions?)
 
 
-### <span id = "cv">Computer Vision</span>
+### Computer Vision
 计算机视觉问题有以下几类:
 - 图片分类
 - 目标检测
@@ -28,7 +28,7 @@
 则在第一层的时候参数的维度为 (1000 , 3000000), 所以是一个一千乘以三百万的矩阵
 
 
-### <span id = "ed">Edge Detection</span>
+### Edge Detection
 **卷积的意义**  
 数字图像是一个二维的离散信号，对数字图像做卷积操作其实就是利用卷积核（卷积模板）在图像上滑动，将图像点上的像素值与对应的卷积核上的数值相乘，然后将所有相乘后的值相加作为卷积核中间像素对应的图像上像素的值，并最终滑动完所有图像的过程.  
 - 卷积核的大小一般是奇数,这样的话可以按照中间的像素点中心对称
@@ -64,7 +64,7 @@
 
 由上面卷积的意义可知, 对于不同的卷积核可以产生出不同的特征, 所以在卷积神经网络中,就是对这些卷积核的参数来进行学习
 
-### <span id = "pd">Padding</span>
+### Padding
 假设输入图片的大小为 n×n，而滤波器的大小为 $f×f$，则卷积后的输出图片大小为 $(n−f+1)×(n−f+1)$。
 
 这样做会有两个缺陷:
@@ -83,5 +83,5 @@
 
 在计算机视觉领域，$f$ 通常为奇数。原因包括 Same 卷积中 $p=\frac{f−1}2$ 能得到自然数结果，并且过滤器有一个便于表示其所在位置的中心点。
 
-### <span id = "sc">Strided Convolutions</span>
+### Strided Convolutions
 卷积过程中，有时需要通过填充来避免信息损失，有时也需要通过设置步长（Stride）来压缩一部分信息。
